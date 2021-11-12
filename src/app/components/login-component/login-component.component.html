@@ -1,0 +1,34 @@
+<p>login-component works!</p>
+
+<img src="../../../assets/LOGO1.png" alt="">
+<form [formGroup]="pruebaFrom"  (ngSubmit)="mostrar()">
+    <div class="mb-3">
+      <label class="form-label">UserName</label>
+      <input type="text" formControlName="userName" class="form-control" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control"formControlName="password">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" formControlName="rememberme">
+      <label class="form-check-label" for="exampleCheck1">Remember</label>
+    </div>
+    <button  class="btn btn-primary" >Login</button>
+</form>
+<button  routerLink="/products" routerLinkActive="active"  >ir a products</button>
+<div>
+
+<!--
+<div *ngIf="show">
+    <span>mostrar</span>
+  
+
+     p>Value: {{ userName.value }}</!
+    <p>Value: {{ password.value }}</p 
+
+</div>
+
+-->
+ 
+
