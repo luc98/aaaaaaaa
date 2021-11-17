@@ -1,12 +1,14 @@
-<p>products-component works!</p>
-
+<div>   
+    <button icon="pi pi-plus" style="margin-top:5%; padding-bottom:1%; " pButton pRipple (click)="howdialog()" type="button" label="agregar Producto" class="p-button-help"></button>     
+</div>
 <div class="tableProducts">
-<p-table [value]="list" class="producto" [loading]="loading">
+<p-table  [value]="list" class="producto"  [lazy]="true" (onLazyLoad)="getProducts()"  [loading]="loadingg">
     <ng-template pTemplate="header">
         <tr>
             <th>SKU</th>
             <th>code</th>
             <th>description</th>
+            <th>price</th>
             <th>name</th>
             <th>pictures</th>
         </tr>
@@ -16,12 +18,22 @@
             <td>{{products.SKU}} {{products.sku}}</td>
             <td>{{products.code}}</td>
             <td>{{products.description}}</td>
+            <td>{{products.price}}</td>
             <td>{{products.name}} </td>
             <td>
                 
-                 <i class="far fa-eye" *ngIf="products.pictures" (click)="consola()"></i> 
+                 <i class="far fa-eye" *ngIf="products.pictures" (click)="showdialog(products.pictures)"></i> 
                 </td>
         </tr>
     </ng-template>
 </p-table>
 </div>
+
+<!--
+    (click)="howdialog()" label="agregar"
+
+     p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}">
+    <p class="p-m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p-dialog -->

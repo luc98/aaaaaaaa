@@ -7,36 +7,62 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from "./components/login-component/login-component.component";
-import { PruebaComponent } from './components/prueba/prueba.component';
+import { ImagesDialogComponent } from './components/dialog/imagesDialogComponent/images-dialog.component';
 import {ProductsComponent } from './components/products-component/products-component.component';
-//import {DataViewModule} from 'primeng/dataview';
-//import { DataViewModule } from 'primeng/primeng';
-//import { TabViewModule } from 'primeng/components/tabview/tabview';
-//import { TableModule } from 'primeng/table';
-//import { Table } from 'primeng/table';
-//import {DataViewModule} from 'primeng/dataview';
-//import { DataTableModule } from 'primeng/table';
 import {TableModule} from 'primeng/table';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
-
-
+import {DialogModule} from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {CarouselModule} from 'primeng/carousel';
+import {ImageModule} from 'primeng/image';
+import {ButtonModule} from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import {InputTextModule} from 'primeng/inputtext';
+import {FileUploadModule} from 'primeng/fileupload';
+import { AltaProductosDialogComponent } from './components/dialog/altaProductosDialog/alta-productos-dialog.component';
+import {ProgressBarModule} from 'primeng/progressbar';
+/*
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+*/
+import { list } from '@angular/fire/database';
+import { AngularFireModule} from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PruebaComponent,
-    ProductsComponent
+    ImagesDialogComponent,
+    ProductsComponent,
+    AltaProductosDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     TableModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DialogModule,
+    MatDialogModule,
+    CarouselModule,
+    ImageModule,
+    RippleModule,
+    ButtonModule,
+    InputTextModule,
+    ProgressBarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

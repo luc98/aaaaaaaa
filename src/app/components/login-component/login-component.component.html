@@ -1,34 +1,65 @@
-<p>login-component works!</p>
+<div class="loginComponent">
+  <p-messages [(value)]="msgs"></p-messages>
+  <div>
+    <img width="210" height="126" src="../../../assets/LOGO1.png" alt="" />
+  </div>
 
-<img src="../../../assets/LOGO1.png" alt="">
-<form [formGroup]="pruebaFrom"  (ngSubmit)="mostrar()">
-    <div class="mb-3">
-      <label class="form-label">UserName</label>
-      <input type="text" formControlName="userName" class="form-control" >
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control"formControlName="password">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" formControlName="rememberme">
-      <label class="form-check-label" for="exampleCheck1">Remember</label>
-    </div>
-    <button  class="btn btn-primary" >Login</button>
-</form>
-<button  routerLink="/products" routerLinkActive="active"  >ir a products</button>
-<div>
-
-<!--
-<div *ngIf="show">
-    <span>mostrar</span>
-  
-
-     p>Value: {{ userName.value }}</!
-    <p>Value: {{ password.value }}</p 
-
+  <div>
+    <form [formGroup]="loginForm">
+      <div class="mb-3" style="width: max-content">
+        <!-- label class="form-label">UserName</!-->
+        <!--input type="text" formControlName="userName" class="form-control" -->
+        <span class="p-input-icon-left">
+          <i class="pi pi-user"></i>
+          <input
+            type="text"
+            pInputText
+            formControlName="userName"
+            placeholder="UserName"
+            (keyup.enter)="mostrar()"
+          />
+        </span>
+      </div>
+      <div class="mb-3" style="width: max-content">
+        <!--label for="exampleInputPassword1" class="form-label">Password</ªlabel>
+        <input type="password" class="form-control"formControlName="password"-->
+        <span class="p-input-icon-left">
+          <i class="pi pi-lock"></i>
+          <input
+            type="password"
+            pInputText
+            formControlName="password"
+            placeholder="Password"
+            (keyup.enter)="mostrar()"
+          />
+        </span>
+      </div>
+      <div >
+        <div >
+          <input
+            type="checkbox"
+            class="form-check-input"
+            formControlName="rememberme"
+          />
+          <label
+            class="form-check-label"
+            style="color: aliceblue"
+            for="exampleCheck1"
+            >Remember</label
+          >
+        </div>
+        <div>
+          <button
+            pButton
+            pRipple
+            (click)="mostrar()"
+            type="button"
+            label="Login"
+            class="p-button-help"
+          ></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!--button  routerLink="/products" routerLinkActive="active"  >ir a products</button -->
 </div>
-
--->
- 
-

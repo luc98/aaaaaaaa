@@ -1,13 +1,13 @@
-body{
-    
-}
 
 .tableProducts{
-    background-color: beige;
-    align-content: center;
-    
+    margin-top: 1%;    
 }
 
 .producto{
     border-collapse: collapse;
+}
+
+.p-button{
+    background-color: #443484!important;
+    border: #000000;
 }

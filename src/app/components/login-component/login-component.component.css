@@ -1,0 +1,15 @@
+.p-button{
+    background-color: #443484!important;
+    border: #000000;
+}
+
+.loginComponent{
+    
+    display: flex;  
+    margin-top: 5%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

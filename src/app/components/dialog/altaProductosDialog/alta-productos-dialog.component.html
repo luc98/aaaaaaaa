@@ -1,0 +1,65 @@
+<h3>Alta producto</h3>
+<div *ngIf="showprogressbar">
+  <p-progressBar
+    mode="indeterminate"
+    [style]="{ height: '6px' }"
+  ></p-progressBar>
+</div>
+<!-- *ngIf="sku.invalid || code.invalid || name.invalid || description.invalid || price.invalid || currency.invalid" -->
+
+<form [formGroup]="AltaProductosForm" class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">SKU</label>
+    <input type="number" class="form-control" formControlName="sku" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">code</label>
+    <input type="number" class="form-control" formControlName="code" />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="name"
+      placeholder="name"
+    />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">description</label>
+    <input type="text" class="form-control" formControlName="description" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">price</label>
+    <input type="number" class="form-control" formControlName="price" />
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">currency</label>
+    <input type="text" class="form-control" formControlName="currency" />
+  </div>
+  <div class="col-12">
+    <label class="form-label">pictures</label>
+    <input
+      type="file"
+      class="form-control"
+      accept="image/png, image/jpeg"
+      (change)="onBasicUpload($event)"
+      multiple
+    />
+    <div *ngIf="myfile.length">
+      <p *ngFor="let file of myfile">{{ file.name }}</p>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <!--
+    <button type="submit" (click)="subir()" class="btn btn-primary">
+      Upload Product
+    </button>
+    -->
+    <button pButton pRipple (click)="subir()" type="button" label="Upload Product" class="p-button-help"></button>
+  </div>
+</form>
+<!--
+  <button type="submit" (click)="mostrar()" class="btn btn-primary">products</button>
+-->

@@ -1,0 +1,19 @@
+<ng-container *ngIf="lista">
+  <div *ngFor="let itemimages of lista">
+    <p-image
+      src="{{ itemimages }}"
+      class="list-images"
+      alt="assets\noimages.png"
+      width="250"
+    ></p-image>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="lista.length == 0">
+  <p-image
+    src="assets\noimages.png"
+    class="list-images"
+    alt="assets\noimages.png"
+    width="250"
+  ></p-image>
+</ng-container>
